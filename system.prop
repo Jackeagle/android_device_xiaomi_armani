@@ -37,6 +37,10 @@ mm.enable.smoothstreaming=true
 mm.enable.qcom_parser=37491
 mm.enable.vsync.render=1
 
+# SDCard
+persist.fuse_sdcard=true
+ro.crypto.fuse_sdcard=true
+
 # Telephony
 rild.libpath=/vendor/lib/libril-qc-qmi-1.so
 rild.libargs=-d /dev/smd0
