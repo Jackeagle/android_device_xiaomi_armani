@@ -22,7 +22,7 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
     <!-- Whether to enable auto provisioning the app for new SIM card on boot.-->
-    <bool name="config_auto_provision_enable">true</bool>
+
 
     <!-- Flag indicating whether we should enable the automatic brightness in Settings.
                   config_hardware_automatic_brightness_available is not set, so we will use software implementation -->
@@ -129,7 +129,7 @@
     <bool translatable="false" name="config_wifi_background_scan_support">true</bool>
 
     <!-- Boolean indicating whether Softap requires reloading AP firmware -->
-    <bool name="config_wifiApFirmwareReload">false</bool>
+
     
     <!-- Indicate whether the SD card is accessible without removing the battery. -->
     <bool name="config_batterySdCardAccessibility">true</bool>
@@ -158,7 +158,7 @@
     <bool name="config_lidControlsSleep">true</bool>
 
     <!-- Device supports LED flashlight -->
-    <bool name="config_enableTorch">true</bool>
+
 
     <!-- Whether WiFi display is supported by this device.
          There are many prerequisites for this feature to work correctly.
@@ -192,8 +192,8 @@
     <integer name="config_deviceHardwareKeys">7</integer>
 
     <!-- Performance profiles -->
-    <string name="config_perf_profile_prop">sys.perf.profile</string>
-    <string name="config_perf_profile_default_entry">1</string>
+
+
 
     <!-- Default value for proximity check on screen wake
          NOTE ! - Enable for devices that have a fast response proximity sensor (ideally < 300ms)
