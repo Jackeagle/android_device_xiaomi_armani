@@ -17,9 +17,6 @@
 # Inherit from the proprietary version
 -include vendor/xiaomi/armani/BoardConfigVendor.mk
 
-# Assert
-TARGET_OTA_ASSERT_DEVICE := armani
-
 # Include path
 TARGET_SPECIFIC_HEADER_PATH := device/xiaomi/armani/include
 
@@ -152,7 +149,6 @@ BOARD_VOLD_DISC_HAS_MULTIPLE_MAJORS := true
 BOARD_VOLD_EMMC_SHARES_DEV_MAJOR := true
 BOARD_VOLD_MAX_PARTITIONS := 29
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun%d/file
-TARGET_HW_DISK_ENCRYPTION := true
 
 # Wifi
 BOARD_HAVE_XIAOMI_WIFI := true
