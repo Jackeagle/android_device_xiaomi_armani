@@ -17,12 +17,9 @@
 # Inherit from the proprietary version
 -include vendor/xiaomi/armani/BoardConfigVendor.mk
 
-<<<<<<< HEAD
 # Assert
 TARGET_OTA_ASSERT_DEVICE := armani
 
-=======
->>>>>>> 1cc4170... Big changes in BoardConfig.mk
 # Include path
 TARGET_SPECIFIC_HEADER_PATH := device/xiaomi/armani/include
 
@@ -43,13 +40,10 @@ TARGET_CPU_ABI2 := armeabi
 TARGET_CPU_SMP := true
 TARGET_CPU_VARIANT := krait
 
-<<<<<<< HEAD
-=======
 # Flags
 TARGET_GLOBAL_CFLAGS += -mtune=cortex-a7 -mfpu=neon-vfpv4 -mfloat-abi=softfp
 TARGET_GLOBAL_CPPFLAGS += -mtune=cortex-a7 -mfpu=neon-vfpv4 -mfloat-abi=softfp
 
->>>>>>> 1cc4170... Big changes in BoardConfig.mk
 # Kernel
 TARGET_PREBUILT_KERNEL := device/xiaomi/armani/kernel
 TARGET_KERNEL_SOURCE := kernel/xiaomi/armani
@@ -77,9 +71,6 @@ BLUETOOTH_HCI_USE_MCT := true
 USE_DEVICE_SPECIFIC_CAMERA := true
 COMMON_GLOBAL_CFLAGS += -DNEEDS_VECTORIMPL_SYMBOLS
 
-<<<<<<< HEAD
-# Display
-=======
 # Enable suspend during charger mode
 BOARD_CHARGER_ENABLE_SUSPEND := true
 
@@ -104,7 +95,6 @@ BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := $(TARGET_BOARD_PLATFORM)
 TARGET_NO_RPC := true
 
 # Graphics
->>>>>>> 1cc4170... Big changes in BoardConfig.mk
 BOARD_EGL_CFG := device/xiaomi/armani/configs/egl.cfg
 TARGET_USES_C2D_COMPOSITION := true
 TARGET_USES_ION := true
@@ -125,31 +115,10 @@ MAX_EGL_CACHE_SIZE := 2048*1024
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
 
-<<<<<<< HEAD
-# Partitions
-BOARD_BOOTIMAGE_PARTITION_SIZE := 0x1000000
-BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x1000000
-BOARD_SYSTEMIMAGE_PARTITION_SIZE := 838860800
-BOARD_CACHEIMAGE_PARTITION_SIZE := 402653184
-BOARD_USERDATAIMAGE_PARTITION_SIZE := 6241112064
-BOARD_FLASH_BLOCK_SIZE := 131072
-BOARD_HAS_LARGE_FILESYSTEM := true
-
-=======
->>>>>>> 1cc4170... Big changes in BoardConfig.mk
 # Power
 TARGET_POWERHAL_VARIANT := qcom
 
 # QCOM hardware
-<<<<<<< HEAD
-COMMON_GLOBAL_CFLAGS += -DQCOM_HARDWARE -DQCOM_BSP
-BOARD_USES_QCOM_HARDWARE := true
-TARGET_USES_QCOM_BSP := true
-TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
-TARGET_QCOM_AUDIO_VARIANT := caf
-TARGET_QCOM_DISPLAY_VARIANT := caf-legacy
-TARGET_QCOM_MEDIA_VARIANT := caf-legacy
-=======
 BOARD_USES_QCOM_HARDWARE := true
 TARGET_USES_QCOM_BSP := true
 COMMON_GLOBAL_CFLAGS += -DQCOM_HARDWARE -DQCOM_BSP
@@ -157,7 +126,6 @@ TARGET_QCOM_AUDIO_VARIANT := caf
 TARGET_QCOM_DISPLAY_VARIANT := caf-legacy
 TARGET_QCOM_MEDIA_VARIANT := caf-legacy
 TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
->>>>>>> 1cc4170... Big changes in BoardConfig.mk
 
 # Recovery
 TARGET_RECOVERY_FSTAB := device/xiaomi/armani/rootdir/etc/fstab.qcom
