@@ -17,12 +17,16 @@
 # Inherit from the proprietary version
 -include vendor/xiaomi/armani/BoardConfigVendor.mk
 
-LOCAL_PATH := device/xiaomi/armani
-
 # Assert
 TARGET_OTA_ASSERT_DEVICE := armani
 
-TARGET_SPECIFIC_HEADER_PATH := $(LOCAL_PATH)/include
+# Include path
+TARGET_SPECIFIC_HEADER_PATH := device/xiaomi/armani/include
+
+# Bootloader
+TARGET_BOOTLOADER_BOARD_NAME := MSM8226
+TARGET_NO_BOOTLOADER := true
+TARGET_NO_RADIOIMAGE := true
 
 # Platform
 TARGET_BOARD_PLATFORM := msm8226
@@ -36,16 +40,8 @@ TARGET_CPU_ABI2 := armeabi
 TARGET_CPU_SMP := true
 TARGET_CPU_VARIANT := krait
 
-# Bootloader
-TARGET_BOOTLOADER_BOARD_NAME := MSM8226
-TARGET_NO_BOOTLOADER := true
-
-# Flags
-TARGET_GLOBAL_CFLAGS += -mtune=cortex-a7 -mfpu=neon-vfpv4 -mfloat-abi=softfp
-TARGET_GLOBAL_CPPFLAGS += -mtune=cortex-a7 -mfpu=neon-vfpv4 -mfloat-abi=softfp
-
 # Kernel
-TARGET_PREBUILT_KERNEL := $(LOCAL_PATH)/kernel
+TARGET_PREBUILT_KERNEL := device/xiaomi/armani/kernel
 TARGET_KERNEL_SOURCE := kernel/xiaomi/armani
 TARGET_KERNEL_CONFIG := cm_msm8226_perf_defconfig
 BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37
@@ -53,20 +49,16 @@ BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_SEPARATED_DT := true
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000 --tags_offset 0x01e00000
-BOARD_CUSTOM_BOOTIMG_MK := $(LOCAL_PATH)/mkbootimg_pre.mk
+BOARD_CUSTOM_BOOTIMG_MK := device/xiaomi/armani/mkbootimg_pre.mk
 
 # Audio
 BOARD_USES_ALSA_AUDIO := true
-TARGET_QCOM_AUDIO_VARIANT := caf
 AUDIO_FEATURE_DISABLED_ANC_HEADSET := true
 AUDIO_FEATURE_DISABLED_DS1_DOLBY_DDP := true
 AUDIO_FEATURE_DISABLED_SSR := true
 
-# Bionic
-TARGET_USE_QCOM_BIONIC_OPTIMIZATION := true
-
 # Bluetooth
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(LOCAL_PATH)/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/xiaomi/armani/bluetooth
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_QCOM := true
 BLUETOOTH_HCI_USE_MCT := true
@@ -76,8 +68,7 @@ USE_DEVICE_SPECIFIC_CAMERA := true
 COMMON_GLOBAL_CFLAGS += -DNEEDS_VECTORIMPL_SYMBOLS
 
 # Display
-BOARD_EGL_CFG := $(LOCAL_PATH)/configs/egl.cfg
-TARGET_QCOM_DISPLAY_VARIANT := caf-legacy
+BOARD_EGL_CFG := device/xiaomi/armani/configs/egl.cfg
 TARGET_USES_C2D_COMPOSITION := true
 TARGET_USES_ION := true
 USE_OPENGL_RENDERER := true
@@ -107,10 +98,6 @@ TARGET_NO_RPC := true
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
 
-# Media
-TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
-TARGET_QCOM_MEDIA_VARIANT := caf-legacy
-
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 0x1000000
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x1000000
@@ -123,14 +110,17 @@ BOARD_HAS_LARGE_FILESYSTEM := true
 # Power
 TARGET_POWERHAL_VARIANT := qcom
 
-# Qualcomm support
-COMMON_GLOBAL_CFLAGS += -DQCOM_BSP
-COMMON_GLOBAL_CFLAGS += -DQCOM_HARDWARE
+# QCOM hardware
+COMMON_GLOBAL_CFLAGS += -DQCOM_HARDWARE -DQCOM_BSP
 BOARD_USES_QCOM_HARDWARE := true
 TARGET_USES_QCOM_BSP := true
+TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
+TARGET_QCOM_AUDIO_VARIANT := caf
+TARGET_QCOM_DISPLAY_VARIANT := caf-legacy
+TARGET_QCOM_MEDIA_VARIANT := caf-legacy
 
 # Recovery
-TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/etc/fstab.qcom
+TARGET_RECOVERY_FSTAB := device/xiaomi/armani/rootdir/etc/fstab.qcom
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_HAS_NO_SELECT_BUTTON := true
@@ -139,7 +129,7 @@ BOARD_SUPPRESS_EMMC_WIPE := true
 
 # SELinux
 BOARD_SEPOLICY_DIRS += \
-    $(LOCAL_PATH)/sepolicy
+    device/xiaomi/armani/sepolicy
 
 BOARD_SEPOLICY_UNION += \
     adbd.te \
